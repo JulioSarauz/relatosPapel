@@ -1,0 +1,306 @@
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <nav id="scrollspy" class="navbar page-navbar navbar-dark navbar-expand-md fixed-top" data-spy="affix"
+        data-offset-top="20">
+        <div class="container">
+            <a class="navbar-brand" href="#"><strong class="text-primary">RELATOS</strong><span class="text-light"> DE
+                    PAPEL</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#features">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Planes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#review">Opiniones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-dark shadow-none ml-md-4"
+                            href="#">Catálogo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header d-flex justify-content-center">
+        <div class="container">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-7">
+                    <div class="header-content">
+                        <h3 class="header-title"><strong class="text-primary">RELATOS</strong><span> DE PAPEL</span>
+                        </h3>
+                        <h4 class="header-subtitle">Tu biblioteca digital para comprar o alquilar libros</h4>
+                        <p>Descubre un mundo de historias a tu alcance. Relatos de Papel te ofrece miles de libros en
+                            formato digital, disponibles para compra o alquiler.</p>
+                        <button class="btn btn-outline-light btn-flat">Explorar catálogo</button>
+                    </div>
+                </div>
+                <div class="col-md-5 d-none d-md-block">
+                    <form class="header-form" (ngSubmit)="login()" [formGroup]="loginForm">
+                        <div class="head">Inicia sesión en <span class="text-primary">Relatos de Papel</span></div>
+                        <div class="body">
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="username" placeholder="Usuario"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" formControlName="password"
+                                    placeholder="Contraseña" required>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <button type="submit" class="btn btn-primary btn-block"
+                                [disabled]="loginForm.invalid">Ingresar</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="social-wrapper" id="features">
+        <div class="container">
+            <div class="social-txt">
+                <h6 class="title">Síguenos en redes</h6>
+                <p>Conéctate con nuestra comunidad lectora y entérate de las últimas novedades y promociones.</p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="link"><i class="ti-facebook"></i></a>
+                <a href="#" class="link"><i class="ti-twitter-alt"></i></a>
+                <a href="#" class="link"><i class="ti-google"></i></a>
+                <a href="#" class="link"><i class="ti-pinterest-alt"></i></a>
+                <a href="#" class="link"><i class="ti-instagram"></i></a>
+                <a href="#" class="link"><i class="ti-rss"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-lg-8">
+                    <div class="tabs-container">
+                        <ul class="nav tab-nav" id="pills-tab">
+                            <li class="item"><a class="link active" id="pills-home-tab" data-toggle="pill"
+                                    href="#pills-home">Compra</a></li>
+                            <li class="item"><a class="link" id="pills-profile-tab" data-toggle="pill"
+                                    href="#pills-profile">Alquiler</a></li>
+                            <li class="item"><a class="link" id="pills-contact-tab" data-toggle="pill"
+                                    href="#pills-contact">Club de Lectura</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="pills-home">
+                                <h4 class="title">Compra de libros</h4>
+                                <p>Accede a nuestro catálogo y adquiere tus libros favoritos de manera permanente.
+                                    Descarga inmediata y acceso sin límites.</p>
+                                <button class="btn btn-primary mt-3">Ver catálogo</button>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile">
+                                <h4 class="title">Alquiler de libros</h4>
+                                <p>Disfruta tus lecturas por días o semanas. Alquila títulos de forma económica y
+                                    flexible desde cualquier dispositivo.</p>
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact">
+                                <h4 class="title">Club de Lectura</h4>
+                                <p>Únete a nuestro club mensual y comparte tus impresiones con otros lectores
+                                    apasionados. Lecturas guiadas, sorteos y más.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block align-self-center">
+                    <img src="assets/imgs/eiffel-tower.svg" alt="" class="w-100 tower">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="container text-center">
+            <h6 class="display-4 has-line">¿POR QUÉ RELATOS DE PAPEL?</h6>
+            <p class="mb-5 pb-4">Una biblioteca moderna para lectores modernos</p>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="circle-100 mb-3"><i class="ti-light-bulb"></i></div>
+                    <h6 class="title mb-3">Diseño Intuitivo</h6>
+                    <p>Navega fácilmente entre géneros, autores y recomendaciones personalizadas.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="circle-100 mb-3"><i class="ti-paint-bucket"></i></div>
+                    <h6 class="title mb-3">Multidispositivo</h6>
+                    <p>Lee en cualquier lugar desde tu computadora, tablet o celular sin interrupciones.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="circle-100 mb-3"><i class="ti-marker-alt"></i></div>
+                    <h6 class="title mb-3">Personalización</h6>
+                    <p>Guarda tus favoritos, crea colecciones y recibe recomendaciones únicas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="pricing">
+        <div class="container text-center">
+            <h6 class="display-4 has-line">PLANES DE SUSCRIPCIÓN</h6>
+            <p class="mb-5 pb-4">Elige el plan que mejor se adapte a tu hábito de lectura</p>
+            <div class="row pt-5">
+                <div class="col-lg-4">
+                    <a href="#" class="pricing-card">
+                        <div class="head">Gratis</div>
+                        <div class="body">
+                            <h1><small>$</small>0</h1>
+                            <p>Acceso limitado</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Libros gratuitos</li>
+                            <li class="list-group-item">Acceso al blog</li>
+                            <li class="list-group-item">Boletines y noticias</li>
+                            <li class="list-group-item">Registro básico</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="#" class="pricing-card popular">
+                        <div class="head">Lector Activo</div>
+                        <div class="body">
+                            <h1><small>$</small>9.99</h1>
+                            <p>Mensual</p>
+                        </div>
+                        <div class="popular-item">MÁS POPULAR</div>
+                        <ul class="list-group">
+                            <li class="list-group-item">10 libros al mes</li>
+                            <li class="list-group-item">Acceso completo al catálogo</li>
+                            <li class="list-group-item">Club de lectura</li>
+                            <li class="list-group-item">Recomendaciones exclusivas</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="#" class="pricing-card">
+                        <div class="head">Lector Premium</div>
+                        <div class="body">
+                            <h1><small>$</small>19.99</h1>
+                            <p>Mensual</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Libros ilimitados</li>
+                            <li class="list-group-item">Eventos exclusivos</li>
+                            <li class="list-group-item">Atención prioritaria</li>
+                            <li class="list-group-item">Regalos mensuales</li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="review">
+        <div class="container text-center">
+            <h6 class="display-4 has-line">WHAT OUR CUSTOMERS ARE SAYING</h6>
+            <p class="mb-5 pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="row text-left">
+                <div class="col-md-4">
+                    <div class="testmonial">
+                        <p class="description"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi,
+                                eaque, repellat. Corporis facilis reprehenderit, cupiditate.</i></p>
+                        <div class="media">
+                            <img class="mr-3" src="assets/imgs/avatar1.jpg" width="60" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h6 class="title">Emma Re</h6>
+                                <p class="text-muted">Web Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testmonial">
+                        <p class="description"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi,
+                                eaque, repellat. Corporis facilis reprehenderit, cupiditate.</i></p>
+                        <div class="media">
+                            <img class="mr-3" src="assets/imgs/avatar2.jpg" width="60" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h6 class="title">John Doe</h6>
+                                <p class="text-muted">Freelancer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testmonial">
+                        <p class="description"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi,
+                                eaque, repellat. Corporis facilis reprehenderit, cupiditate.</i></p>
+                        <div class="media">
+                            <img class="mr-3" src="assets/imgs/avatar3.jpg" width="60" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h6 class="title">Emily Roe</h6>
+                                <p class="text-muted">Graphic Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section has-img-bg text-center">
+        <div class="container">
+            <h6 class="display-3 has-line">STYLISH AXURE DESIGN</h6>
+            <h5 class="mb-5 font-weight-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore,
+                itaque.</h5>
+            <button class="btn btn-outline-light btn-flat">Download</button>
+        </div>
+    </section>
+    <section class="section" id="contact">
+        <div class="container text-center">
+            <h6 class="display-4 has-line">CONTACT US</h6>
+            <p class="mb-5 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <form>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="form-group pb-1">
+                            <input type="text" class="form-control" required placeholder="Name">
+                        </div>
+                        <div class="form-group pb-1">
+                            <input type="email" class="form-control" required placeholder="Email">
+                        </div>
+                        <div class="form-group ">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <textarea name="" id="" cols="" rows="7" class="form-control" required
+                            placeholder="Message"></textarea>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary btn-block" value="Send Message">
+            </form>
+        </div>
+    </section>
+    <footer class="footer py-4 bg-dark text-light">
+        <div class="container text-center">
+            <p class="mb-4 small">Copyright
+                <script>document.write(new Date().getFullYear())</script> &copy; <a
+                    href="http://www.devcrud.com">DevCRUD</a>
+            </p>
+            <div class="social-links">
+                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <!-- bootstrap 3 affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Rubic js -->
+    <script src="assets/js/rubic.js"></script>
+
+</body>
