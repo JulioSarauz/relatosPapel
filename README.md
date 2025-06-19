@@ -25,3 +25,45 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Pasos para ci/cd
+
+## Instalacion
+ 
+sudo apt update && sudo apt install -y curl git nginx
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install -y nodejs
+sudo npm install -g @angular/cli
+
+## Verificacion 
+
+node -v
+ng version
+
+
+## configuracion 
+
+sudo nano /etc/nginx/sites-available/default
+
+location / {
+    root /var/www/angular-app;
+    index index.html;
+    try_files $uri $uri/ /index.html;
+}
+
+sudo systemctl restart nginx
+
+## Carpeta de despliegue 
+
+sudo mkdir -p /var/www/angular-app
+sudo chown -R ubuntu:ubuntu /var/www/angular-app
+
+## ✅ 5. Agrega tu clave SSH en GitLab/GitHub
+Genera una clave si no la tienes: ssh-keygen -t ed25519
+
+Copia la privada a tu CI/CD (Settings > CI/CD > Variables)
+
+Agrega la pública a ~/.ssh/authorized_keys en EC2.
+
+
