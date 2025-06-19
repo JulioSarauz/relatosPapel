@@ -12,9 +12,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
      this.bookService.getBooks().subscribe((data:any) => {
-      this.libros = data.data;
-      console.log(this.libros);
-      
+      this.libros = data.data;      
     });
   }
 
