@@ -19,10 +19,9 @@ export class LoginComponent {
 
     login() {
     const { username, password } = this.loginForm.value;
+  
     if (username && password) {
-      // Aquí podrías validar contra un backend
-      // Suponemos validación exitosa
-      this.router.navigate(['/home']); // Cambia '/home' por tu ruta real
+      this.router.navigate(['/home']);
     }
   }
 }

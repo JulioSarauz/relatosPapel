@@ -1,0 +1,111 @@
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <nav id="scrollspy" class="navbar page-navbar navbar-dark navbar-expand-md fixed-top" data-spy="affix"
+        data-offset-top="20">
+        <div class="container">
+            <a class="navbar-brand" href="#"><strong class="text-primary">RELATOS</strong><span class="text-light"> DE
+                    PAPEL</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+        </div>
+    </nav>
+
+
+
+
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-lg-8">
+                    <div id="carouselLibros" class="carousel slide carousel-fade" data-ride="carousel"
+                        data-interval="5000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/imgs/libro1.png" class="d-block w-100" alt="Compra de libros" >
+                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+                                    <h4 class="title">Compra de libros</h4>
+                                    <p>Accede a nuestro catálogo y adquiere tus libros favoritos. Descarga inmediata y
+                                        acceso sin límites.</p>
+                                    <a href="#" class="btn btn-primary mt-2">Ver catálogo</a>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/imgs/libro2.png" class="d-block w-100" alt="Alquiler de libros" height="600px">
+                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+                                    <h4 class="title">Alquiler de libros</h4>
+                                    <p>Disfruta tus lecturas por días o semanas. Alquila títulos de forma económica y
+                                        flexible.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/imgs/libro3.png" class="d-block w-100" alt="Club de Lectura" height="600px">
+                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+                                    <h4 class="title">Club de Lectura</h4>
+                                    <p>Únete a nuestro club mensual. Lecturas guiadas, sorteos y más con otros lectores
+                                        apasionados.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselLibros" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselLibros" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 d-none d-lg-block align-self-center">
+                   <img src="assets/imgs/buho.gif" alt="" class="w-100 tower" style="border: 1px solid white; border-radius: 50%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+    <section class="section" id="review">
+  <div class="container text-center">
+    <h6 class="display-4 has-line">CATÁLOGO</h6>
+    <p class="mb-5 pb-4">Descubre nuestra selección de libros recomendados por nuestros lectores.</p>
+    <div class="row text-left">
+      <div class="col-md-4" *ngFor="let libro of libros">
+        <div class="testmonial">
+          <img class="mb-3" src="assets/imgs/LIBROO.jpg" width="100%" height="50px" alt="{{ libro.nombre }}" style="margin-left: 40%;">
+          <div class="media-body">
+            <h6 class="title">{{ libro.nombre }}</h6>
+            <p class="text-muted"><b>Autor:</b> {{ libro.author }}</p>
+            <p class="text-muted"><b>Categoría:</b> {{ libro.categoria }}</p>
+            <p class="text-muted"><b>Quedan:</b> {{ libro.stock }}</p>
+            <p class="cuadro-sinopsis"><i>{{ libro.sinopsis }}</i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <footer class="footer py-4 bg-dark text-light">
+        <div class="container text-center">
+            <p class="mb-4 small">Copyright
+                <script>document.write(new Date().getFullYear())</script> &copy; <a
+                    href="https://politica-privacidad-theta.vercel.app/about">NeiruzSoft</a>
+            </p>
+            <div class="social-links">
+                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <script src="assets/js/rubic.js"></script>
+
+</body>
