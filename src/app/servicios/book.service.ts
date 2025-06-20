@@ -10,7 +10,9 @@ export class BookService {
  //private apiUrl = '/api/relatos/book';
   constructor(private http: HttpClient) { }
 
+
     getBooks(): Observable<any[]> {
+          console.log("consumo de "+this.apiUrl);
     return this.http.post<any[]>(this.apiUrl,{});
   }
 }
