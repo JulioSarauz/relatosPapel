@@ -2,7 +2,7 @@ name: Deploy Angular to EC2
 
 on:
   push:
-    branches: [master]  # O reemplaza por tu rama si es otra
+    branches: [master]  # Cambia si usas otra rama
 
 jobs:
   build-and-deploy:
@@ -25,11 +25,16 @@ jobs:
 
     - name: Deploy to EC2
       env:
-        HOST: 54.209.28.232  # Tu IP pública de EC2
+        HOST: 54.209.28.232
         USER: ubuntu
         PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         TARGET: /var/www/angular-app
       run: |
         echo "$PRIVATE_KEY" > key.pem
         chmod 600 key.pem
+
+        # Limpiar contenido previo del directorio en EC2
+        ssh -i key.pem -o StrictHostKeyChecking=no $USER@$HOST "rm -rf $TARGET/*"
+
+        # Subir archivos nuevos
         rsync -avz -e "ssh -i key.pem -o StrictHostKeyChecking=no" dist/* $USER@$HOST:$TARGET
