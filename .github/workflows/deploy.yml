@@ -1,0 +1,35 @@
+name: Deploy Angular to EC2
+
+on:
+  push:
+    branches: [master]  # O reemplaza por tu rama si es otra
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build Angular app
+      run: npm run build --prod
+
+    - name: Deploy to EC2
+      env:
+        HOST: 54.209.28.232  # Tu IP pública de EC2
+        USER: ubuntu
+        PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        TARGET: /var/www/angular-app
+      run: |
+        echo "$PRIVATE_KEY" > key.pem
+        chmod 600 key.pem
+        rsync -avz -e "ssh -i key.pem -o StrictHostKeyChecking=no" dist/* $USER@$HOST:$TARGET
