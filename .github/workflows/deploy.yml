@@ -2,7 +2,7 @@ name: Deploy Angular to EC2
 
 on:
   push:
-    branches: [master]  # Cambia si usas otra rama
+    branches: [master]  # Cambia si usas otra ram
 
 jobs:
   build-and-deploy:
@@ -25,7 +25,7 @@ jobs:
 
     - name: Deploy to EC2
       env:
-        HOST: 34.228.218.191
+        HOST: 34.228.218.191 
         USER: ubuntu
         PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         TARGET: /var/www/angular-app
