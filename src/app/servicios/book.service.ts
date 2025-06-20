@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class BookService {
- private apiUrl = 'https://localhost:7777/relatos/book';
+ private apiUrl = 'https://10.0.139.111:3000/relatos/book';
   constructor(private http: HttpClient) { }
 
     getBooks(): Observable<any[]> {
